@@ -19,7 +19,7 @@ img {
 
 /* Start Screen */
 #game-intro {
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -33,7 +33,7 @@ img {
     width: 60vh;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: blanchedalmond;
@@ -41,17 +41,17 @@ img {
 }
 
 .intro-container h1 {
-    font-size: 5rem;
+    font-size: 2.5rem;
     padding: 0rem 2rem;
 }
 
 .img-intro {
-    height: 10rem;
-    width: 10rem;
+    height: 7rem;
+    width: 7rem;
 }
 
 #game-intro p {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .game-container-p-1 {
@@ -60,7 +60,8 @@ img {
 }
 
 .start-screen-button {
-    font-size: 4rem;
+    font-size: 2rem;
+    margin-top: 2rem;
     padding: 0.5rem 5rem;
     font-weight: 600;
     border: 1px solid black;
@@ -70,7 +71,9 @@ img {
 }
 
 .start-screen-button:hover {
-    color: black;
+    color: #20659c;
+    background-color: white;
+    border: 1px solid #20659c;
 }
 
 
@@ -129,14 +132,15 @@ img {
 }
 
 #game-end img {
-    padding-top: 6rem;
-    height: 10rem;
-    width: 15rem;
+    padding-top: 2rem;
+    height: 6rem;
+    width: 8rem;
 }
 
 #restart-button {
-    font-size: 3rem;
-    padding: 0.5rem 3rem;
+    font-size: 2rem;
+    padding: 0.5rem 1.5rem;
+    margin: 3rem 0;
     font-weight: 600;
     border: 1px solid black;
     border-radius: 4px;
@@ -144,12 +148,18 @@ img {
     color: white;
 }
 
+.restart-button:hover {
+    color: #20659c;
+    background-color: white;
+    border: 3px solid #20659c;
+}
+
 .end-container h1 {
-    font-size: 5rem;
-    padding: 0rem 2rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
 }
 
 .end-container p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0 2rem;
 }
