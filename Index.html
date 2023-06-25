@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IronHack Game</title>
+    <link rel="stylesheet" href="./Resources/styles.css">
 </head>
 <body>
-    
+    <main>
+        <!-- Start Screen -->
+        <div id="game-intro">
+            <div class="intro-container">
+                <h1>Washing my dog</h1>
+                <img src="./Resources/Images/Nala1.png" alt="" class="img-intro">
+                <p>Let's clean my dirty dog</p>
+                <p class="game-container-p-1">(She doesn't like baths though)</p>
+                <button class="start-screen-button">Start</button>
+            </div>
+        </div>
+
+
+        <!-- Game container -->
+        <div id="game-container">
+            <div class="stats-container">
+                <h2>Stats:</h2>
+                <div class="stats">
+                    <p >Score: <span id="score">0</span></p>
+                    <p>Lives: <span id="lives">3</span></p>
+                </div>
+            </div>
+            
+            <!-- This is the game screen. When the game starts it is hidden using 'display: none' -->
+            <div id="game-screen"></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="game-end">
+            <div class="end-container">
+                <img src="./Resources/Images/Nala2.png" alt="">
+                <h1>Game Over</h1>
+                <p>You successfully gave Nala a bath</p>
+                <p>I would congratulate you but you probably should check for bite marks and get a few vaccines (just in case)</p>
+                <button id="restart-button">Restart</button>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="obstacle.js"></script>
 </body>
 </html>
