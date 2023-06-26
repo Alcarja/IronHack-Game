@@ -58,7 +58,27 @@ class Player {
     }
     //After we move, we call the element properties again to update them. We changed them with the move() method, and after changing them we have to update the values so they reflect the movement that happened in the move() method
 
-    didCollide() {
-
+    didCollide(obstacle) { //This handles the collisions between cars and obstacles. The didCollide method expects to receive an obstacle
+        const playerRect = this.element.getBoundingClientRect() //This gives the position of your player
+        const obstacleRect = obstacle.element.getBoundingClientRect() //This gives the position of the obstacle
+    //When you have the positions of both your player and the obstacle you check for an overlap. If there is overlap you return true. If there is not an overlap you return false
+        if (
+          playerRect.left < obstacleRect.right &&
+          playerRect.right > obstacleRect.left &&
+          playerRect.top < obstacleRect.bottom &&
+          playerRect.bottom > obstacleRect.top
+        ) {
+          return true
+        } else {
+          return false
+        }
+      }
+    didExit(obstacle) {
+        const obstacleRect = obstacle.element.getBoundingClientRect();
+        if(obstacleRect > this.gameScreen.offsetWidth) {
+            return true
+        } else {
+            return false
+        }
     }
 }
