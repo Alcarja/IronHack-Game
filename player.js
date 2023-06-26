@@ -26,4 +26,39 @@ class Player {
         this.element.style.left = `${this.left}px`;
         //We set the element's top and left positions
     }
+
+    move() {
+        this.left += this.directionX;
+        this.top += this.directionY;
+        //The starting point of our element is set with the top and left position. We add our directionX and directionY to understand in which axes we are moving, and we use our variables directionX and directionY to add something to our left and top positions so we can move the object trough the screen
+
+        if (this.left < 10) {
+            this.left = 10
+          }
+          if (this.top < 10) {
+            this.top = 10
+          }
+          // handles right hand side
+          if (this.left > this.gameScreen.offsetWidth - this.width - 50) {
+            this.left = this.gameScreen.offsetWidth - this.width - 50
+          }
+      
+          // handles bottom side
+          if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+            this.top = this.gameScreen.offsetHeight - this.height - 10
+          } //Makes the car not leave the screen
+
+          this.updatePosition(); 
+          //We call this eveytime we move to update the screen so the player effectively moves
+    }
+
+    updatePosition() {
+        this.element.style.top = `${this.top}px`;
+        this.element.style.left = `${this.left}px`;
+    }
+    //After we move, we call the element properties again to update them. We changed them with the move() method, and after changing them we have to update the values so they reflect the movement that happened in the move() method
+
+    didCollide() {
+        
+    }
 }

@@ -1,23 +1,24 @@
 class Game {
     constructor() {
         this.startScreen = document.getElementById("game-intro");
-        this.gameScreen = document.getElementById("game-screen"); //With this we can reference our screens when we need it
+        this.gameScreen = document.getElementById("game-container"); //With this we can reference our screens when we need it
         this.endScreen = document.getElementById("game-end");
-        this.height = 400;
+        this.height = 800;
         this.width = 800;
-        this.player = null;
+        this.player = new Player(this.startScreen);
         this.obstacles = [];
         this.isGameOver = false;
         this.score = 0;
         this.lives = 3;
+        this.animateId;
     }
 
     start() {
         this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
 
-        this.startScreen.display = 'none';
-        this.gameScreen.display = 'block';
+        this.startScreen.style.display = 'none';
+        this.gameScreen.style.display = 'flex';
 
         this.gameLoop()
 
@@ -25,16 +26,23 @@ class Game {
     }
 
     gameLoop() {
-        this.update(); 
+        this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
+
+        if(this.animateId % 200 === 0) { //Every 200 frames we are going to do something
+
+        }
     }
 
     update() {
+        this.player.move(); //The first thing we do is update the position of our player
+        
+        const obstaclesToKeep = [];
 
     }
 
     endGame() {
         this.gameScreen.style.display = 'none';
-        this.endScreen.style.display = 'block';
+        this.endScreen.style.display = 'flex';
         //When we call the endGame we hide the gameScreen and we show the endScreen
     }
 }
