@@ -107,6 +107,11 @@ img {
 
 /* Game Screen */
 #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;   /* We set the position to relative because we want to position everything else in absolute */
     
 }
 
