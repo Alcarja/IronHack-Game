@@ -1,18 +1,3 @@
-
-let gravity = 0.5;
-let bird_dy = 0;
-
-
-function apply_gravity() {
-    
-    bird_dy = bird_dy + gravity;
-    document.addEventListener('keydown', (e) => {
-      if (e.key == 'ArrowUp' || e.key == ' ') {
-        bird_dy = -7.6;
-      }
-    })};
-
-
 //WORKING SCRIPT.JS
 
     window.addEventListener('load', () => {
@@ -27,48 +12,33 @@ function apply_gravity() {
         document.addEventListener('keydown', (event) => {
             const key = event.key;
             const possibleKeyStrokes = [
-             /* "ArrowLeft", */
-              "ArrowUp",
-            //   "ArrowRight",
-            //   "ArrowDown",
+              ' ',
             ];
-      
+
             if(possibleKeyStrokes.includes(key)) {
-              event.preventDefault();
-              switch (key) {
-                case 'ArrowUp':
-                  game.player.directionY = -20
-                  setTimeout(() => {
-                    game.player.directionY = 20;
-                }, 600)
-                  break
-                 /* case 'ArrowLeft':
-                  game.player.directionX = -1
-                  break
-                case 'ArrowRight':
-                  game.player.directionX = 1
-                  break
-                case 'ArrowDown':
-                  game.player.directionY = 1
-                  break */
-              } 
+                event.preventDefault();
+                if(key === ' ') {
+                    game.player.directionY = -20
+                    setTimeout(() => {
+                        game.player.directionY = 20;
+                    }, 600)
+                }
             }
-          })
+      
+          }) //EventListener
           
           document.addEventListener('keyup', event => {
             const key = event.key
-            const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown']
-      
-            if (possibleKeystrokes.includes(key)) {
-              // Update player's directionX and directionY based on the key pressed
-              switch (key) {
-                case 'ArrowUp':
+            const possibleKeystrokes = [' ']
+
+            if(possibleKeystrokes.includes(key)) {
+                if(key === ' ') {
                     game.player.directionY = 0;
-                  break
-              }
+                }
             }
-          })
-    }
+      
+          }) //EventListener
+    } //Function StartGame
 
 
 
@@ -83,31 +53,19 @@ restartButton.addEventListener('click', function() {
     location.reload();
     //When we click the restart button we are going to reload the whole page so the game starts again
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })
+
+
+
+//GRAVITY
+let y = 250;
+let grav = 0.07;
+let accel = 0.55;
+
+y+= grav;
+grav += accel;
+
+function mousePressed() {
+    grav = -11;
+    
+}

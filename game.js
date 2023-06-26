@@ -37,7 +37,7 @@ class Game {
     gameLoop() {
         this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
 
-        if(this.animateId % 200 === 0) { //Every 200 frames we are going to do something
+        if(this.animateId % 50 === 0) { //Every 200 frames we are going to do something
             this.obstacles.push(new Obstacle(this.gameScreen)); 
         }
 
