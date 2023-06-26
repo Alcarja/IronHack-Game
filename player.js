@@ -2,10 +2,10 @@ class Player {
     constructor(gameScreen) {
         this.gameScreen = gameScreen; //We pass a gameScreen into the constructor, which will be the variable gameScreen from the game.js (that is linked to our gameScreen in the HTML)
 
-        this.height = 150;
-        this.width = 80;
-        this.top = 480;
-        this.left = 180;
+        this.height = 50;
+        this.width = 50;
+        this.top = 300;
+        this.left = 20;
         //Player's attributes
 
         this.directionX = 0;
@@ -59,6 +59,6 @@ class Player {
     //After we move, we call the element properties again to update them. We changed them with the move() method, and after changing them we have to update the values so they reflect the movement that happened in the move() method
 
     didCollide() {
-        
+
     }
 }

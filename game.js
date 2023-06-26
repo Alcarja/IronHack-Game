@@ -6,11 +6,11 @@ class Game {
         this.endScreen = document.getElementById("game-end");
         this.height = 100;
         this.width = 100;
-        this.height1 = 80;
-        this.width1 = 90;
+        this.height1 = 400;
+        this.width1 = 500;
         //With gameScreen we control the whole cointainer, with gameScreen1 we control the screen for the game
         //With this.height1 and this.width1 we control the height and the width of the gameScreen
-        this.player = new Player(this.startScreen);
+        this.player = new Player(this.gameScreen1);
         this.obstacles = [];
         this.isGameOver = false;
         this.score = 0;
@@ -22,8 +22,8 @@ class Game {
         this.gameScreen.style.height = `${this.height}vh`;
         this.gameScreen.style.width = `${this.width}vw`;
 
-        this.gameScreen1.style.height = `${this.height1}vh`;
-        this.gameScreen1.style.width = `${this.width1}vw`;
+        this.gameScreen1.style.height = `${this.height1}px`;
+        this.gameScreen1.style.width = `${this.width1}px`;
         this.gameScreen1.style.display = 'flex';
 
         this.startScreen.style.display = 'none';
@@ -38,7 +38,13 @@ class Game {
         this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
 
         if(this.animateId % 200 === 0) { //Every 200 frames we are going to do something
+           /* this.obstacles.push(new Obstacle(this.gameScreen)); */
+        }
 
+        if(this.isGameOver) {
+            this.endGame()            
+        } else {
+            this.animateId = requestAnimationFrame(() => this.gameLoop()) //Every time the screen creates a new frame is going to call the gameLoop
         }
     }
 
