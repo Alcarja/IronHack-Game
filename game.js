@@ -1,10 +1,15 @@
 class Game {
     constructor() {
         this.startScreen = document.getElementById("game-intro");
+        this.gameScreen1 = document.getElementById("game-screen");
         this.gameScreen = document.getElementById("game-container"); //With this we can reference our screens when we need it
         this.endScreen = document.getElementById("game-end");
-        this.height = 800;
-        this.width = 800;
+        this.height = 100;
+        this.width = 100;
+        this.height1 = 80;
+        this.width1 = 90;
+        //With gameScreen we control the whole cointainer, with gameScreen1 we control the screen for the game
+        //With this.height1 and this.width1 we control the height and the width of the gameScreen
         this.player = new Player(this.startScreen);
         this.obstacles = [];
         this.isGameOver = false;
@@ -14,8 +19,12 @@ class Game {
     }
 
     start() {
-        this.gameScreen.style.height = `${this.height}px`;
-        this.gameScreen.style.width = `${this.width}px`;
+        this.gameScreen.style.height = `${this.height}vh`;
+        this.gameScreen.style.width = `${this.width}vw`;
+
+        this.gameScreen1.style.height = `${this.height1}vh`;
+        this.gameScreen1.style.width = `${this.width1}vw`;
+        this.gameScreen1.style.display = 'flex';
 
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'flex';

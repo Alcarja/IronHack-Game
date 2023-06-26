@@ -80,10 +80,12 @@ img {
 /* Game Container  */
 #game-container {
     display: none; /*Make 'display: block' to see it */
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     padding: 2rem 0px;
     justify-content: center;
+    align-items: center;
     background-color: blanchedalmond;
 }
 
@@ -109,10 +111,11 @@ img {
 #game-screen {
     display: none;
     align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
+    padding: 0px 0px;
+    margin-bottom: 100px;
+    /* overflow: hidden; */
     position: relative;   /* We set the position to relative because we want to position everything else in absolute */
-    
+    background-color: red;
 }
 
 
