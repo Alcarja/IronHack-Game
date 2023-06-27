@@ -14,7 +14,7 @@ class Player {
         //Player's movements
 
         this.element = document.createElement('img');
-        this.element.src = './Resources/Images/Nala1.png';
+        this.element.src = '/Resources/Images/Nala1.png';
         this.element.style.position = 'absolute';
         this.gameScreen.appendChild(this.element);
         //We create an element that's going to be an image, we set its source and we position it 'absolute' so we can move it using 'top' and 'left' properties. We append it to the startScreen, which is where we want to see it
