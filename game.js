@@ -6,8 +6,8 @@ class Game {
         this.endScreen = document.getElementById("game-end");
         this.height = 100;
         this.width = 100;
-        this.height1 = 600;
-        this.width1 = 800;
+        this.height1 = 400;
+        this.width1 = 700;
         //With gameScreen we control the whole cointainer, with gameScreen1 we control the screen for the game
         //With this.height1 and this.width1 we control the height and the width of the gameScreen
         this.player = new Player(this.gameScreen1);
@@ -37,8 +37,8 @@ class Game {
     gameLoop() {
         this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
 
-        if(this.animateId % 50 === 0) { //Every 200 frames we are going to do something
-            this.obstacles.push(new Obstacle(this.gameScreen)); 
+        if(this.animateId % 50 === 0) { //Every 50 frames we are going to do something
+            this.obstacles.push(new Obstacle(this.gameScreen1)); 
         }
 
         if(this.isGameOver) {
@@ -54,7 +54,9 @@ class Game {
         const obstaclesToKeep = [];
         let screenScore = document.getElementById('score');
         let screenLives = document.getElementById('lives');
-        
+
+        //this.player.didExit();
+
         this.obstacles.forEach(obstacle => {
             obstacle.move();
             if(this.player.didCollide(obstacle)) { //If we collide with an obstacle we remove that obstacle from the obstacles array and we lose a life

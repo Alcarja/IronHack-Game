@@ -1,10 +1,11 @@
 class Player {
     constructor(gameScreen) {
         this.gameScreen = gameScreen; //We pass a gameScreen into the constructor, which will be the variable gameScreen from the game.js (that is linked to our gameScreen in the HTML)
+        this.isGoingUp = false;
 
         this.height = 50;
         this.width = 50;
-        this.top = 300;
+        this.top = 200;
         this.left = 20;
         //Player's attributes
 
@@ -35,9 +36,10 @@ class Player {
         if (this.left < 10) {
             this.left = 10
           }
-          if (this.top < 10) {
+        if (this.top < 10) {
             this.top = 10
           }
+          
           // handles right hand side
           if (this.left > this.gameScreen.offsetWidth - this.width - 50) {
             this.left = this.gameScreen.offsetWidth - this.width - 50
@@ -73,7 +75,16 @@ class Player {
           return false
         }
       }
-    didExit(obstacle) {
+
+      didExit() {
+        const playerRect = this.element.getBoundingClientRect()
+        if(playerRect.bottom ) {
+          this.lives -= 1;
+          this.lives.innerHTML = this.lives;
+        }
+      }
+
+      didExit(obstacle) {
         const obstacleRect = obstacle.element.getBoundingClientRect();
         if(obstacleRect > this.gameScreen.offsetWidth) {
             return true

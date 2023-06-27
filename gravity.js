@@ -57,15 +57,3 @@ restartButton.addEventListener('click', function() {
 
 
 
-//GRAVITY
-let y = 250;
-let grav = 0.07;
-let accel = 0.55;
-
-y+= grav;
-grav += accel;
-
-function mousePressed() {
-    grav = -11;
-    
-}

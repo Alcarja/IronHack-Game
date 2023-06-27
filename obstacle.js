@@ -1,7 +1,7 @@
 class Obstacle {
     constructor(gameScreen1) {
         this.gameScreen1 = gameScreen1;
-        this.left = 800;
+        this.left = 600;
         this.top = Math.floor(Math.random() * 300); //This should be the height of the bathtub so they don't appear from thin air 413
         this.width = 80;
         this.height = 45;

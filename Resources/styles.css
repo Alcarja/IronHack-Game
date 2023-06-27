@@ -7,7 +7,7 @@ body {
     padding: 0;
     font-family: Belanosima;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 img {
@@ -80,17 +80,18 @@ img {
 /* Game Container  */
 #game-container {
     display: none; /*Make 'display: block' to see it */
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw;
     height: 100vh;
-    padding: 2rem 0px;
+    padding: 0;
+    margin: 0;
     justify-content: center;
     align-items: center;
     background-color: blanchedalmond;
 }
 
 .stats-container {
-    height: 7rem;
+    height: 2rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -112,7 +113,7 @@ img {
     display: none;
     align-content: center;
     padding: 0px 0px;
-    margin-bottom: 100px;
+    margin: 0px;
     /* overflow: hidden; */
     position: relative;   /* We set the position to relative because we want to position everything else in absolute */
     background-color: red;

@@ -19,13 +19,16 @@ window.addEventListener('load', () => {
             if(possibleKeyStrokes.includes(key)) {
                 event.preventDefault();
                 if(key === ' ') {
-                    game.player.directionY -= 10;
-                    let grav = 0.95;
-                    let acc = 0.9;
+                    game.player.directionY -= 15;
+                    isGoingUp = true; //When I press the space bar we set isGoingUp to true
+                    setTimeout(() => {
+                        game.player.isGoingUp = false; //After 100 miliseconds we turn it back to false
+                    }, 100)
                     
-                     setTimeout(() => {
-                         game.player.directionY += (grav + (grav * acc));
-                    }, 100) 
+                   /* if(game.player.isGoingUp = false) {
+
+                    } */
+                    
                 }
             }
       
@@ -36,9 +39,13 @@ window.addEventListener('load', () => {
             const possibleKeystrokes = [' ']
 
             if(possibleKeystrokes.includes(key)) {
+               
                 if(key === ' ') {
-                    game.player.directionY = 0;
+                    game.player.directionY = 1;
                 }
+                setTimeout(() => {
+                    game.player.directionY += (2);
+               }, 100) 
             }
       
           }) //EventListener */
