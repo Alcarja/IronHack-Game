@@ -16,6 +16,7 @@ class Game {
         this.score = 0;
         this.lives = 3;
         this.animateId;
+        this.audio = new Audio ('./Resources/0146. Sea - AShamaluevMusic.mp3');
     }
 
     start() {
@@ -30,6 +31,7 @@ class Game {
         this.gameScreen.style.display = 'flex';
 
         this.gameLoop()
+    
 
         //When we call the method start we set the gameScreen height and width and we show the Game Screen that we want and hide the Start Screen. We also call the gameLoop() fucntion to start the game
     }
@@ -37,7 +39,7 @@ class Game {
     gameLoop() {
         this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
 
-        if(this.animateId % 50 === 0) { //Every 50 frames we are going to do something
+        if(this.animateId % 20 === 0) { //Every 50 frames we are going to do something
             this.obstacles.push(new Obstacle(this.gameScreen1)); 
         }
 
@@ -80,11 +82,23 @@ class Game {
     }
 
     endGame() {
+        let finalScore = document.getElementById('finalScore')
+
         this.gameScreen.style.display = 'none';
         this.endScreen.style.display = 'flex';
+        this.stopAudio();
         //When we call the endGame we hide the gameScreen and we show the endScreen
         this.player.element.remove() //When the game ends we remove the player and we remove the obstacles
         this.obstacles.forEach(obstacle => obstacle.element.remove())
+        finalScore.innerHTML = this.score;
     
+    }
+
+    playAudio() {
+        this.audio.play();
+    }
+
+    stopAudio() {
+        this.audio.pause();
     }
 }

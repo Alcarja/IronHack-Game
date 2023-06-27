@@ -1,15 +1,17 @@
 window.addEventListener('load', () => {
     const startButton = document.querySelector(".start-screen-button");
     const restartButton = document.getElementById("restart-button");
+    let musicButton = document.querySelector(".audioButton");
     let game;
+    
+    
+    
 
     function startGame() {
         console.log('Start Game');
         game = new Game();
         game.start();
-
-      
-
+    
         document.addEventListener('keydown', (event) => {
             const key = event.key;
             const possibleKeyStrokes = [
@@ -44,7 +46,7 @@ window.addEventListener('load', () => {
                     game.player.directionY = 1;
                 }
                 setTimeout(() => {
-                    game.player.directionY += (2.5);
+                    game.player.directionY += (4);
                }, 100) 
             }
       
@@ -53,10 +55,27 @@ window.addEventListener('load', () => {
 
 
 
+ musicButton.addEventListener("click", function() {
+    if(musicButton.classList.contains('mute')) {
+        game.stopAudio();
+        musicButton.classList.replace('mute', 'unMute')
+        console.log(musicButton.classList)
+
+    }
+    else {
+        game.playAudio();
+        musicButton.classList.replace('unMute', 'mute')
+        console.log(musicButton.classList)
+
+    }
+
+}) 
+//Make the music button work
 
 
 startButton.addEventListener("click", function() {
     startGame();
+
     //When we click the start button we are going to run the startGame function
 });
 
