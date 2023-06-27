@@ -91,10 +91,11 @@ img {
 }
 
 .stats-container {
-    height: 2rem;
+    height: 3rem;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-bottom: 7rem;
+    padding-right: 2rem;
     align-items: center;
     /* background-color: red; */
 }
@@ -114,9 +115,11 @@ img {
     align-content: center;
     padding: 0px 0px;
     margin: 0px;
-    /* overflow: hidden; */
+    border: 2px #20659c solid;
     position: relative;   /* We set the position to relative because we want to position everything else in absolute */
-    background-color: red;
+    background-image: url('/Resources/Images/dfemw24-7874c1fd-f733-4dbd-9e5e-0cd5717b39e3.png');
+    background-position: center;
+    background-size: cover;
 }
 
 

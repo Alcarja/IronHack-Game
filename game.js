@@ -63,7 +63,7 @@ class Game {
                 obstacle.element.remove()
                 this.lives -= 1;
                 screenLives.innerHTML = this.lives
-            } else if(obstacle.left - this.width <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
+            } else if(obstacle.left - this.width + 80 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
                 this.score += 1;
                 screenScore.innerHTML = this.score
                 obstacle.element.remove()

@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
                     game.player.directionY = 1;
                 }
                 setTimeout(() => {
-                    game.player.directionY += (2);
+                    game.player.directionY += (2.5);
                }, 100) 
             }
       
