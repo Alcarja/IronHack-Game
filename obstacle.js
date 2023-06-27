@@ -7,7 +7,7 @@ class Obstacle {
         this.height = 45;
 
         this.element = document.createElement('img');
-        this.element.src = '/Resources/Images/Bathtub.png';
+        this.element.src = './Resources/Images/Bathtub.png';
         this.element.style.position = 'absolute';
 
         this.element.style.width = `${this.width}px`;
