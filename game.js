@@ -75,7 +75,7 @@ class Game {
                 obstacle.element.remove()
                 this.lives -= 1;
                 screenLives.innerHTML = this.lives
-            } else if(obstacle.left - this.width + 80 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
+            } else if(obstacle.left - this.width + 100 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
                 this.score += 1;
                 screenScore.innerHTML = this.score
                 obstacle.element.remove()
@@ -92,7 +92,7 @@ class Game {
                 extraLive.element.remove()
                 this.lives += 1;
                 screenLives.innerHTML = this.lives
-            } else if(extraLive.left - this.width + 80 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
+            } else if(extraLive.left - this.width + 100 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
                 this.score += 0;
                 screenScore.innerHTML = this.score
                 extraLive.element.remove()
@@ -104,6 +104,7 @@ class Game {
         //This handles the extraLives array movement
         
         this.obstacles = obstaclesToKeep;
+
 
         if(this.lives <= 0) {
             this.isGameOver = true;

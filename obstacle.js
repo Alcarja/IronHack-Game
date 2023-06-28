@@ -35,8 +35,8 @@ class Obstacle2 {
         this.gameScreen1 = gameScreen1;
         this.left = 600;
         this.top = Math.floor(Math.random() * 300 + 45); //This should be the height of the bathtub so they don't appear from thin air 413
-        this.width = 60;
-        this.height = 45;
+        this.width = 65;
+        this.height = 55;
 
         this.element = document.createElement('img');
         this.element.src = './Resources/Images/Nala3.png';
