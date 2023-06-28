@@ -53,14 +53,10 @@ img {
 
 #game-intro p {
     font-size: 1rem;
-    padding: 0.4rem;
+    padding: 0.4rem 2rem;
     margin:0;
 }
 
-.game-container-p-1 {
-    padding-top: 0;
-    margin-top: 0;
-}
 
 .start-screen-button {
     font-size: 2rem;
@@ -135,7 +131,7 @@ img {
 .audioButton {
     width: 30px;
     height: 30px;
-    background-color: black;
+    background-color: blanchedalmond;
     margin-top: 1rem;
     border: 1px solid #20659c;
 }
