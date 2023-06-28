@@ -44,7 +44,6 @@ Wash my dog (patent pending) is a game where you have to avoid bathtubs and spon
 ## PROJECT STRUCTURE
 
 ### game.js
-___
 
 * this.startScreen;
 * this.gameScreen;
@@ -107,7 +106,7 @@ Obstacles 1, 2 & 3
 * updatePosition();
 
 ## DEPLOY
-link
 
+https://alcarja.github.io/IronHack-Game/
 
 
