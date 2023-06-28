@@ -76,13 +76,15 @@ class Player {
         }
       }
 
-      didExit() {
-        const playerRect = this.element.getBoundingClientRect()
-        if(playerRect.bottom ) {
-          this.lives -= 1;
-          this.lives.innerHTML = this.lives;
-        }
-      }
+      // didExit() {
+      //   const playerRect = this.element.getBoundingClientRect()
+      //   if(playerRect.bottom ) {
+      //     this.lives -= 1;
+      //     this.lives.innerHTML = this.lives;
+      //   }
+      // }
+
+      //If the player leaves the screen then you lose a live (not working)
 
       didExit(obstacle) {
         const obstacleRect = obstacle.element.getBoundingClientRect();

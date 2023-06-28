@@ -12,6 +12,7 @@ class Game {
         //With this.height1 and this.width1 we control the height and the width of the gameScreen
         this.player = new Player(this.gameScreen1);
         this.obstacles = [];
+        this.extraLives = [];
         this.isGameOver = false;
         this.score = 0;
         this.lives = 3;
@@ -39,8 +40,16 @@ class Game {
     gameLoop() {
         this.update(); //Every time the gameLoop runs we are going to do a number of things that are stored into the update method
 
-        if(this.animateId % 20 === 0) { //Every 50 frames we are going to do something
+        if(this.animateId % 40 === 0) { //Every 20 frames we are going to do something
             this.obstacles.push(new Obstacle(this.gameScreen1)); 
+        }
+
+        if(this.animateId % 300 === 0) {
+            this.extraLives.push(new Obstacle2(this.gameScreen1)); 
+        }
+
+        if(this.animateId % 130 === 0) {
+            this.obstacles.push(new Obstacle3(this.gameScreen1)); 
         }
 
         if(this.isGameOver) {
@@ -54,6 +63,7 @@ class Game {
         this.player.move(); //The first thing we do is update the position of our player
         
         const obstaclesToKeep = [];
+        const livesToKeep = [];
         let screenScore = document.getElementById('score');
         let screenLives = document.getElementById('lives');
 
@@ -73,6 +83,25 @@ class Game {
                 obstaclesToKeep.push(obstacle);
             } 
         })
+
+        //This handles the obstacles array movement
+
+        this.extraLives.forEach(extraLive => {
+            extraLive.move();
+            if(this.player.didCollide(extraLive)) { //If we collide with an obstacle we remove that obstacle from the obstacles array and we lose a life
+                extraLive.element.remove()
+                this.lives += 1;
+                screenLives.innerHTML = this.lives
+            } else if(extraLive.left - this.width + 80 <= 0) { //This checks if the obstacle is out of the screen and if the obstacle leaves the screen we get 1 point
+                this.score += 0;
+                screenScore.innerHTML = this.score
+                extraLive.element.remove()
+            } else {
+                livesToKeep.push(extraLive);
+            } 
+        })
+
+        //This handles the extraLives array movement
         
         this.obstacles = obstaclesToKeep;
 

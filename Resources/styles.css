@@ -29,7 +29,7 @@ img {
 
 /* Intro Container */
 .intro-container {
-    height: 90vh;
+    height: auto;
     width: 60vh;
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -52,6 +52,8 @@ img {
 
 #game-intro p {
     font-size: 1rem;
+    padding: 0.4rem;
+    margin:0;
 }
 
 .game-container-p-1 {
@@ -62,6 +64,7 @@ img {
 .start-screen-button {
     font-size: 2rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     padding: 0.5rem 5rem;
     font-weight: 600;
     border: 1px solid black;
@@ -74,33 +77,6 @@ img {
     color: #20659c;
     background-color: white;
     border: 1px solid #20659c;
-}
-
-.audioButton img {
-    height: 30px;
-    width: 30px;
-}
-
-.audioButton {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    margin-top: 1rem;
-    border: 1px solid #20659c;
-}
-
-.mute {
-    background-image: url('./Images/silencio\ \(1\).png');
-    background-size: cover;
-    background-position: center;
-    
-}
-
-
-.unMute {
-    background-image: url('./Images/simbolo-de-interfaz-de-subir-volumen.png');
-    background-size: cover;
-    background-position: center;
 }
 
 
@@ -147,6 +123,33 @@ img {
     background-image: url('/Resources/Images/dfemw24-7874c1fd-f733-4dbd-9e5e-0cd5717b39e3.png');
     background-position: center;
     background-size: cover;
+}
+
+.audioButton img {
+    height: 30px;
+    width: 30px;
+}
+
+.audioButton {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    margin-top: 1rem;
+    border: 1px solid #20659c;
+}
+
+.mute {
+    background-image: url('./Images/silencio\ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.unMute {
+    background-image: url('./Images/simbolo-de-interfaz-de-subir-volumen.png');
+    background-size: cover;
+    background-position: center;
 }
 
 
