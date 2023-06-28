@@ -121,7 +121,7 @@ img {
     margin: 0px;
     border: 2px #20659c solid;
     position: relative;   /* We set the position to relative because we want to position everything else in absolute */
-    background-image: url('../Resources/Images/dfemw24-7874c1fd-f733-4dbd-9e5e-0cd5717b39e3.png');
+    background-image: url('/Resources/Images/dfemw24-7874c1fd-f733-4dbd-9e5e-0cd5717b39e3.png');
     background-position: center;
     background-size: cover;
 }
