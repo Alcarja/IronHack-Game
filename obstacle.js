@@ -20,7 +20,7 @@ class Obstacle {
     }
 
     move() {
-        this.left -= 6;
+        this.left -= 9;
         this.updatePosition();
     }
 
@@ -52,7 +52,7 @@ class Obstacle2 {
     }
 
     move() {
-        this.left -= 6;
+        this.left -= 9;
         this.updatePosition();
     }
 
@@ -84,7 +84,7 @@ class Obstacle3 {
     }
 
     move() {
-        this.left -= 9;
+        this.left -= 12;
         this.updatePosition();
     }
 
